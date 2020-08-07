@@ -1,7 +1,7 @@
 export default [
   {
     id: 1,
-    photo: 'img/photos/default_avatar.png',
+    photo: '',
     name: 'Дейенерис Таргариен',
     departament: 'Руководство',
     position: 'Директор',
@@ -11,7 +11,7 @@ export default [
   },
   {
     id: 2,
-    photo: 'img/photos/default_avatar.png',
+    photo: '',
     name: 'Джон Сноу',
     departament: 'Руководство',
     position: 'Заместитель директора',
@@ -21,7 +21,7 @@ export default [
   },
   {
     id: 3,
-    photo: 'img/photos/default_avatar.png',
+    photo: '',
     name: 'Тирион Ланнистер',
     departament: 'Приемная',
     position: 'Секретарь руководителя',
@@ -32,7 +32,7 @@ export default [
   },
   {
     id: 4,
-    photo: 'img/photos/default_avatar.png',
+    photo: '',
     name: 'Санса Старк',
     departament: 'Отдел продаж',
     position: 'Начальник отдела',
@@ -42,7 +42,7 @@ export default [
   },
   {
     id: 5,
-    photo: 'img/photos/default_avatar.png',
+    photo: '',
     name: 'Брандон Старк',
     departament: 'Отдел продаж',
     position: 'Менеджер по продажам',
@@ -52,7 +52,7 @@ export default [
   },
   {
     id: 6,
-    photo: 'img/photos/default_avatar.png',
+    photo: '',
     name: 'Джейме Ланнистер',
     departament: 'Отдел разработки',
     position: 'Начальник отдела',
@@ -62,7 +62,7 @@ export default [
   },
   {
     id: 7,
-    photo: 'img/photos/default_avatar.png',
+    photo: '',
     name: 'Арья Старк',
     departament: 'Отдел разработки',
     position: 'Разработчик',
@@ -72,7 +72,7 @@ export default [
   },
   {
     id: 8,
-    photo: 'img/photos/default_avatar.png',
+    photo: '',
     name: 'Сандор Клиган',
     departament: 'Отдел кадров',
     position: 'Заместитель начальника отдела',
@@ -82,7 +82,7 @@ export default [
   },
   {
     id: 9,
-    photo: 'img/photos/default_avatar.png',
+    photo: '',
     name: 'Григор Клиган',
     departament: 'Отдел кадров',
     position: 'HR-менеджер',
@@ -92,7 +92,7 @@ export default [
   },
   {
     id: 10,
-    photo: 'img/photos/default_avatar.png',
+    photo: '',
     name: 'Серсея Ланнистер',
     departament: 'Отдел аналитики',
     position: 'Начальник отдела',
@@ -102,7 +102,7 @@ export default [
   },
   {
     id: 11,
-    photo: 'img/photos/default_avatar.png',
+    photo: '',
     name: 'Джоффри Баратеон',
     departament: 'Отдел аналитики',
     position: 'Главный аналитик',

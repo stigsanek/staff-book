@@ -3,11 +3,13 @@ import React from 'react';
 import './employee-item.css';
 
 const EmployeeItem = ({ data }) => {
-  const { name, departament, position, phone, email } = data;
+  const { photo, name, departament, position, phone, email } = data;
+
+  const style = photo ? { backgroundImage: `url('${photo}')`, backgroundSize: 'cover' } : null;
 
   return (
     <React.Fragment>
-      <button className="avatar mr-4"></button>
+      <button className="avatar mr-4" style={style}></button>
       <div>
         <p className="h4 mb-2">{name}</p>
         <p className="mb-2">{position}</p>
