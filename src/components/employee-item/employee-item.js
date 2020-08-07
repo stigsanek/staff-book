@@ -13,7 +13,11 @@ const EmployeeItem = ({ data, onModalOpen }) => {
   return (
     <React.Fragment>
       <button
-        className="avatar mr-4" style={style} onClick={() => { onModalOpen(photo) }}></button>
+        className="avatar mr-4"
+        style={style}
+        onClick={() => { onModalOpen(photo) }}
+      >
+      </button>
       <div>
         <p className="h4 mb-2">{name}</p>
         <p className="mb-2">{position}</p>
