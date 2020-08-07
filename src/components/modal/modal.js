@@ -11,7 +11,7 @@ const Modal = ({ photo, onModalCLose }) => {
     <div className="modal" tabIndex="-1">
       <div className="modal-dialog modal-dialog-centered">
         <div className="modal-content" style={style}>
-          <button className="close" type="button" onClick={onModalCLose}></button>
+          <button className="close btn" type="button" onClick={onModalCLose}></button>
         </div>
       </div>
     </div>

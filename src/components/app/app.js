@@ -6,6 +6,7 @@ import FilterButtons from '../filter-buttons';
 import EmployeeList from '../employee-list';
 import Footer from '../footer';
 import Modal from '../modal';
+import TopButton from '../top-button';
 
 import { ALL, LEADERSHIP, RECEPTION, navs } from '../../data/nav';
 import staff from '../../data/staff';
@@ -117,6 +118,7 @@ export default class App extends Component {
           <EmployeeList data={visibleItems} onModalOpen={this.onModalOpen} />
         </main>
         <Footer />
+        <TopButton />
         {modalBlock}
       </React.Fragment>
     );

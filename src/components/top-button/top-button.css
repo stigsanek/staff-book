@@ -1,0 +1,10 @@
+.top-btn {
+  position: fixed;
+  top: 15px;
+  width: 30px;
+  height: 30px;
+  background-image: url('angle-up.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
