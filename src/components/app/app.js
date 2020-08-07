@@ -14,17 +14,40 @@ import './app.css';
 
 export default class App extends Component {
   bodyElement = document.querySelector('body');
+  persons = staff;
 
   state = {
-    peoples: this.sortRange(),
+    peoples: this.sortPeople(),
     filter: ALL,
     term: '',
     photoSrc: ''
   }
 
-  sortRange() {
-    return staff.sort((min, max) => {
+  sortPeople() {
+    const dataNames = this.sortByName(this.persons);
+    return this.sortByRange(dataNames);
+  }
+
+  sortByRange(arr) {
+    return arr.sort((min, max) => {
       return min.rang - max.rang;
+    });
+  }
+
+  sortByName(arr) {
+    return arr.sort((a, b) => {
+      const nameA = a.name.toLocaleLowerCase();
+      const nameB = b.name.toLocaleLowerCase();
+
+      if (nameA < nameB) {
+        return -1;
+      }
+
+      if (nameA > nameB) {
+        return 1;
+      }
+
+      return 0;
     });
   }
 
