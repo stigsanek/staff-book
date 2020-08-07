@@ -11,11 +11,33 @@ import staff from '../../data/staff';
 import './app.css';
 
 export default class App extends Component {
+  ALL = 'Все';
+
   state = {
-    peoples: staff
+    peoples: staff,
+    filter: this.ALL
+  }
+
+  onFilterChange = (filter) => {
+    this.setState({ filter });
+  }
+
+  applyFilter(arr, filter) {
+    return arr.filter((item) => {
+      if (filter === this.ALL) {
+        return item;
+      }
+      if (item.departament === filter) {
+        return item;
+      }
+    });
   }
 
   render() {
+    const { peoples, filter } = this.state;
+
+    const visibleItems = this.applyFilter(peoples, filter);
+
     return (
       <React.Fragment>
         <header className="container mb-5">
@@ -23,10 +45,10 @@ export default class App extends Component {
             <Header />
             <SearchField />
           </div>
-          <FilterButtons />
+          <FilterButtons filter={filter} onFilterChange={this.onFilterChange} />
         </header>
         <main className="container">
-          <EmployeeList data={this.state.peoples} />
+          <EmployeeList data={visibleItems} />
         </main>
         <Footer />
       </React.Fragment>
