@@ -1,16 +1,26 @@
 export default [
   {
     id: 1,
-    photo: '',
-    name: 'Дейенерис Таргариен',
+    photo: 'img/photos/egorov.jpg',
+    name: 'Александр Егоров',
     departament: 'Руководство',
     position: 'Директор',
     rang: 1,
+    phone: '',
+    email: 'stigsanek@yandex.ru'
+  },
+  {
+    id: 2,
+    photo: '',
+    name: 'Дейенерис Таргариен',
+    departament: 'Руководство',
+    position: 'Заместитель директора',
+    rang: 2,
     phone: '100',
     email: 'got@westeros.com'
   },
   {
-    id: 2,
+    id: 3,
     photo: '',
     name: 'Джон Сноу',
     departament: 'Руководство',
@@ -20,7 +30,7 @@ export default [
     email: 'got@westeros.com'
   },
   {
-    id: 3,
+    id: 4,
     photo: '',
     name: 'Тирион Ланнистер',
     departament: 'Приемная',
@@ -31,7 +41,7 @@ export default [
     secretary: 'Приемная'
   },
   {
-    id: 4,
+    id: 5,
     photo: '',
     name: 'Санса Старк',
     departament: 'Отдел продаж',
@@ -41,7 +51,7 @@ export default [
     email: 'got@westeros.com'
   },
   {
-    id: 5,
+    id: 6,
     photo: '',
     name: 'Брандон Старк',
     departament: 'Отдел продаж',
@@ -51,7 +61,7 @@ export default [
     email: 'got@westeros.com'
   },
   {
-    id: 6,
+    id: 7,
     photo: '',
     name: 'Джейме Ланнистер',
     departament: 'Отдел разработки',
@@ -61,7 +71,7 @@ export default [
     email: 'got@westeros.com'
   },
   {
-    id: 7,
+    id: 8,
     photo: '',
     name: 'Арья Старк',
     departament: 'Отдел разработки',
@@ -71,7 +81,7 @@ export default [
     email: 'got@westeros.com'
   },
   {
-    id: 8,
+    id: 9,
     photo: '',
     name: 'Сандор Клиган',
     departament: 'Отдел кадров',
@@ -81,7 +91,7 @@ export default [
     email: 'got@westeros.com'
   },
   {
-    id: 9,
+    id: 10,
     photo: '',
     name: 'Григор Клиган',
     departament: 'Отдел кадров',
@@ -91,7 +101,7 @@ export default [
     email: 'got@westeros.com'
   },
   {
-    id: 10,
+    id: 11,
     photo: '',
     name: 'Серсея Ланнистер',
     departament: 'Отдел аналитики',
@@ -101,7 +111,7 @@ export default [
     email: 'got@westeros.com'
   },
   {
-    id: 11,
+    id: 12,
     photo: '',
     name: 'Джоффри Баратеон',
     departament: 'Отдел аналитики',
