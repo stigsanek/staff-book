@@ -5,6 +5,7 @@ import SearchField from '../search-field';
 import FilterButtons from '../filter-buttons';
 import EmployeeList from '../employee-list';
 import Footer from '../footer';
+import Modal from '../modal';
 
 import { ALL, LEADERSHIP, RECEPTION, navs } from '../../data/nav';
 import staff from '../../data/staff';
@@ -12,10 +13,13 @@ import staff from '../../data/staff';
 import './app.css';
 
 export default class App extends Component {
+  bodyElement = document.querySelector('body');
+
   state = {
     peoples: this.sortRange(),
     filter: ALL,
-    term: ''
+    term: '',
+    photoSrc: ''
   }
 
   sortRange() {
@@ -54,18 +58,31 @@ export default class App extends Component {
     });
   }
 
+  onModalOpen = (photoSrc) => {
+    this.bodyElement.classList.add('modal-open');
+    this.setState({ photoSrc });
+  }
+
+  onModalCLose = () => {
+    this.bodyElement.classList.remove('modal-open');
+    this.setState({ photoSrc: '' });
+  }
+
   render() {
-    const { peoples, filter, term } = this.state;
+    const { peoples, filter, term, photoSrc } = this.state;
 
     const searchItems = this.applySearch(peoples, term)
     const visibleItems = this.applyFilter(searchItems, filter);
+
+    const modal = <Modal photo={photoSrc} onModalCLose={this.onModalCLose} />
+    const modalBlock = photoSrc ? modal : null;
 
     return (
       <React.Fragment>
         <header className="container mb-5">
           <div className="navbar justify-content-center mb-3">
             <Header />
-            <SearchField onSearchItem={this.onSearchItem}/>
+            <SearchField onSearchItem={this.onSearchItem} />
           </div>
           <FilterButtons
             navs={navs}
@@ -74,9 +91,10 @@ export default class App extends Component {
           />
         </header>
         <main className="container">
-          <EmployeeList data={visibleItems} />
+          <EmployeeList data={visibleItems} onModalOpen={this.onModalOpen} />
         </main>
         <Footer />
+        {modalBlock}
       </React.Fragment>
     );
   }
