@@ -23,7 +23,7 @@ export default [
     id: 3,
     photo: 'img/photos/default_avatar.png',
     name: 'Тирион Ланнистер',
-    departament: 'Руководство',
+    departament: 'Приемная',
     position: 'Секретарь руководителя',
     rang: 3,
     phone: '103',

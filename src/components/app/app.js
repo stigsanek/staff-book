@@ -6,16 +6,21 @@ import FilterButtons from '../filter-buttons';
 import EmployeeList from '../employee-list';
 import Footer from '../footer';
 
+import { ALL, LEADERSHIP, RECEPTION, navs } from '../../data/nav';
 import staff from '../../data/staff';
 
 import './app.css';
 
 export default class App extends Component {
-  ALL = 'Все';
-
   state = {
-    peoples: staff,
-    filter: this.ALL
+    peoples: this.sortRange(),
+    filter: ALL
+  }
+
+  sortRange() {
+    return staff.sort((min, max) => {
+      return min.rang - max.rang;
+    });
   }
 
   onFilterChange = (filter) => {
@@ -23,14 +28,14 @@ export default class App extends Component {
   }
 
   applyFilter(arr, filter) {
-    return arr.filter((item) => {
-      if (filter === this.ALL) {
-        return item;
-      }
-      if (item.departament === filter) {
-        return item;
-      }
-    });
+    switch (filter) {
+      case ALL:
+        return arr;
+      case LEADERSHIP:
+        return arr.filter(({ departament }) => departament === LEADERSHIP || departament === RECEPTION);
+      default:
+        return arr.filter(({ departament }) => departament === filter);
+    }
   }
 
   render() {
@@ -45,7 +50,11 @@ export default class App extends Component {
             <Header />
             <SearchField />
           </div>
-          <FilterButtons filter={filter} onFilterChange={this.onFilterChange} />
+          <FilterButtons
+            navs={navs}
+            filter={filter}
+            onFilterChange={this.onFilterChange}
+          />
         </header>
         <main className="container">
           <EmployeeList data={visibleItems} />

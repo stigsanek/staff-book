@@ -1,8 +1,6 @@
 import React from 'react';
 
-import navs from '../../data/nav';
-
-const FilterButtons = ({ filter, onFilterChange }) => {
+const FilterButtons = ({ navs, filter, onFilterChange }) => {
   const buttons = navs.map(({ name, label }) => {
     const isActive = filter === name;
     const clazz = isActive ? 'active' : null;
