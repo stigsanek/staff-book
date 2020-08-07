@@ -14,7 +14,8 @@ import './app.css';
 export default class App extends Component {
   state = {
     peoples: this.sortRange(),
-    filter: ALL
+    filter: ALL,
+    term: ''
   }
 
   sortRange() {
@@ -38,17 +39,33 @@ export default class App extends Component {
     }
   }
 
-  render() {
-    const { peoples, filter } = this.state;
+  onSearchItem = (term) => {
+    this.setState({ term });
+  }
 
-    const visibleItems = this.applyFilter(peoples, filter);
+  applySearch(arr, term) {
+    if (term.length === 0) {
+      return arr;
+    }
+
+    return arr.filter(({ name }) => {
+      const item = name.toLowerCase();
+      return item.indexOf(term.toLowerCase()) > -1;
+    });
+  }
+
+  render() {
+    const { peoples, filter, term } = this.state;
+
+    const searchItems = this.applySearch(peoples, term)
+    const visibleItems = this.applyFilter(searchItems, filter);
 
     return (
       <React.Fragment>
         <header className="container mb-5">
           <div className="navbar justify-content-center mb-3">
             <Header />
-            <SearchField />
+            <SearchField onSearchItem={this.onSearchItem}/>
           </div>
           <FilterButtons
             navs={navs}
