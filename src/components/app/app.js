@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import ErrorBoundary from '../error-boundary';
 import Header from '../header';
 import SearchField from '../search-field';
 import FilterButtons from '../filter-buttons';
@@ -102,7 +103,7 @@ export default class App extends Component {
     const modalBlock = photoSrc ? modal : null;
 
     return (
-      <React.Fragment>
+      <ErrorBoundary>
         <header className="container mb-5">
           <div className="navbar justify-content-center mb-3">
             <Header />
@@ -120,7 +121,7 @@ export default class App extends Component {
         <Footer />
         <TopButton />
         {modalBlock}
-      </React.Fragment>
+      </ErrorBoundary>
     );
   }
 }

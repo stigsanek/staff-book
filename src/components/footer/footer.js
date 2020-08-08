@@ -1,11 +1,13 @@
 import React from 'react';
 
+import ErrorLink from '../error-link';
+
 const Footer = () => {
   return (
     <footer className="container fixed-bottom bg-white">
       <div className="d-flex justify-content-center p-2">
-        <a className="text-info mr-5" href="mailto:stigsanek@yandex.ru">Сообщить об ошибке</a>
-        <span className="text-secondary">v1.0</span>
+        <ErrorLink />
+        <span className="text-secondary ml-5">v1.0</span>
       </div>
     </footer>
   );
