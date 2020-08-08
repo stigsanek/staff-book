@@ -5,8 +5,13 @@ import './employee-item.css';
 const EmployeeItem = ({ data, onModalOpen }) => {
   const { photo, name, departament, position, phone, email } = data;
 
-  const style = photo ? { backgroundImage: `url('${photo}')`, backgroundSize: 'cover' } : null;
+  const bgStyle = {
+    backgroundImage: `url('${photo}')`,
+    backgroundPosition: 'top',
+    backgroundSize: 'cover'
+  };
 
+  const style = photo ? bgStyle : null;
   const phoneBlock = phone ? <p className="user-info user-phone mb-2">{phone}</p> : null;
   const mailBlock = email ? <a className="user-info user-mail text-info" href={`mailto:${email}`}>{email}</a> : null;
 
