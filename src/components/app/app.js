@@ -95,7 +95,7 @@ export default class App extends Component {
   render() {
     const { peoples, filter, term, photoSrc } = this.state;
 
-    const searchItems = this.applySearch(peoples, term)
+    const searchItems = this.applySearch(peoples, term);
     const visibleItems = this.applyFilter(searchItems, filter);
 
     const modal = <Modal photo={photoSrc} onModalCLose={this.onModalCLose} />
