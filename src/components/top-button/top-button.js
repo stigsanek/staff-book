@@ -9,13 +9,19 @@ export default class TopButton extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', () => {
-      if (document.documentElement.clientHeight < window.pageYOffset) {
-        this.showButton();
-      } else {
-        this.hideButton();
-      }
-    });
+    window.addEventListener('scroll', this.onDocumentScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.onDocumentScroll);
+  }
+
+  onDocumentScroll = () => {
+    if (document.documentElement.clientHeight < window.pageYOffset) {
+      this.showButton();
+    } else {
+      this.hideButton();
+    }
   }
 
   showButton() {
